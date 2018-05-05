@@ -1,6 +1,6 @@
 # React-Redux - Simple counter
 This is an simple example and everything in one place for it becomes easier to understand about how Redux state and React component's props communicate with each other.
-* Code for part 1 on master branch and part 2 on `part2` branch
+* Code for part 1 on `master` branch and part 2 on `part2` branch
 * Online demo: [part 1](https://codesandbox.io/s/lx3y9q51yl) - [part 2](https://codesandbox.io/s/p9wqwm00km)
 
 ## Compatibility
