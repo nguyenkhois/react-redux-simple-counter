@@ -39,8 +39,7 @@ class Counter extends React.Component {
                 <div>
                     <p>
                         Everything in one place for it becomes easier to
-                        understand about how Redux state and React component's
-                        props communicate with each other.
+                        understand about how Redux state and React component communicate with each other.
                     </p>
                     <p>Using mapStateToProps and mapDispatchToProps</p>
                 </div>
@@ -67,9 +66,9 @@ const mapDispatchToProps = {
 
 /*
 STEP 3c
-Create mapping from Redux state to React component's props
+Create mapping from Redux state to React component
 - Redux sate: const state = {count: 0};
-- React component's props: this.props.count
+- React component: this.props.count
 */
 const CounterX = connect(mapStateToProps, mapDispatchToProps)(Counter);
 
