@@ -27,22 +27,14 @@ const store = createStore(userReducer); //Redux method
 
 //STEP 3 - Create MAIN CLASS and its methods with using dispatch(action)
 class Counter extends React.Component {
-    increment = () => {
-        this.props.dispatch({ type: "INCREMENT" }); //You can use Redux dispatch() method here when you used connect() which is below
-    };
-
-    decrement = () => {
-        this.props.dispatch({ type: "DECREMENT" });
-    };
-
     render() {
         return (
             <div>
-                <h2>Simple React-Redux example - Counter (Part 1)</h2>
+                <h2>Simple React-Redux example - Counter (Part 2)</h2>
                 <div>
-                    <button onClick={this.decrement}>-</button>
+                    <button onClick={this.props.actionDecrease}>-</button>
                     <span>{this.props.count}</span>
-                    <button onClick={this.increment}>+</button>
+                    <button onClick={this.props.actionIncrease}>+</button>
                 </div>
                 <div>
                     <p>
@@ -50,31 +42,36 @@ class Counter extends React.Component {
                         understand about how Redux state and React component's
                         props communicate with each other.
                     </p>
-                    <p>Using mapStateToProps</p>
-                    <p>
-                        Tip!: You don't need .bind(this) in React when you use
-                        ES6 arrow function. You can see increment() and
-                        decrement() methods.
-                    </p>
+                    <p>Using mapStateToProps and mapDispatchToProps</p>
                 </div>
             </div>
         );
     }
 }
 
-//Using for mapping
+//STEP 3a - Create ACTIONS
+const actionIncrease = () => ({ type: "INCREMENT" }); //returns an action object for dispatch()
+const actionDecrease = () => ({ type: "DECREMENT" });
+
+//STEP 3b - Using for mapping
 const mapStateToProps = state => {
     return {
         count: state.count
     };
 };
+//Using actions here
+const mapDispatchToProps = {
+    actionIncrease,
+    actionDecrease
+};
 
 /*
+STEP 3c
 Create mapping from Redux state to React component's props
 - Redux sate: const state = {count: 0};
 - React component's props: this.props.count
 */
-const CounterX = connect(mapStateToProps)(Counter);
+const CounterX = connect(mapStateToProps, mapDispatchToProps)(Counter);
 
 //STEP 4 - Create main React component with Redux store
 const App = () => (
