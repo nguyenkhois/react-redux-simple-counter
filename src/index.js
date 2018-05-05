@@ -47,12 +47,11 @@ class Counter extends React.Component {
                 <div>
                     <p>
                         Everything in one place for it becomes easier to
-                        understand about how Redux state and React component's
-                        props communicate with each other.
+                        understand about how Redux state and React component communicate with each other.
                     </p>
                     <p>Using mapStateToProps</p>
                     <p>
-                        Tip!: You don't need .bind(this) in React when you use
+                        Tip!: You do not need .bind(this) in React when you use
                         ES6 arrow function. You can see increment() and
                         decrement() methods.
                     </p>
@@ -70,9 +69,9 @@ const mapStateToProps = state => {
 };
 
 /*
-Create mapping from Redux state to React component's props
+Create mapping from Redux state to React component
 - Redux sate: const state = {count: 0};
-- React component's props: this.props.count
+- React component: this.props.count
 */
 const CounterX = connect(mapStateToProps)(Counter);
 
